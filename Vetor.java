@@ -8,6 +8,18 @@ public class Vetor<TipoGenerico> {
         this.tamanho = 0;
     }
 
+    public void insiraNaColocacao(int colocacao, int valor) {
+        this.array[colocacao] = valor;
+    }
+
+    public void removaNaColocacao(int colocacao) {
+        this.array[colocacao] = null;
+    }
+
+    public Object elementoNaColocacao(int colocacao) {
+        return this.array[colocacao];
+    }
+
     public int getCapacidade() {
         return this.capacidade;
     }
@@ -23,6 +35,10 @@ public class Vetor<TipoGenerico> {
 
     public static void main(String[] args) {
         Vetor<String> vetor = new Vetor<>(10);
+        vetor.insiraNaColocacao(0, 1);
+        System.out.println(vetor.elementoNaColocacao(0));
+        vetor.removaNaColocacao(0);
+        System.out.println(vetor.elementoNaColocacao(0));
         vetor.status();
     }
 
